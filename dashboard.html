@@ -1,0 +1,1078 @@
+<<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduPlex | Student Learning Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MAIN APPLICATION -->
+    <div class="app-container">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">🎓</div>
+                <h2>EduPlex</h2>
+            </div>
+
+
+            <nav class="nav-menu">
+
+    <button class="nav-link active" data-page="dashboard">
+        <span>🏠</span>
+        Dashboard
+    </button>
+
+    <button class="nav-link" data-page="courses">
+        <span>📚</span>
+        Courses
+    </button>
+
+    <button class="nav-link" data-page="notes">
+        <span>📝</span>
+        Notes
+    </button>
+
+    <button class="nav-link" data-page="pdfs">
+        <span>📄</span>
+        PDF Library
+    </button>
+
+    <button class="nav-link" data-page="links">
+        <span>🔗</span>
+        Links
+    </button>
+
+    <button class="nav-link" data-page="bookmarks">
+        <span>⭐</span>
+        Bookmarks
+    </button>
+
+    <!-- LOGOUT BUTTON -->
+
+    <button class="nav-link logout-btn" id="logoutBtn">
+        <span>🚪</span>
+        Logout
+    </button>
+
+</nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="download-card">
+
+                    <div class="download-icon">📱</div>
+
+                    <h3>Study Anywhere</h3>
+
+                    <p>
+                        Keep your notes and learning materials organized.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header class="top-header">
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+
+                <div class="header-title">
+
+                    <h1 id="pageTitle">
+                        Welcome back, Sai 👋
+                    </h1>
+
+                    <p id="pageSubtitle">
+                        Ready to continue your learning journey?
+                    </p>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search courses or notes..."
+                        >
+
+                    </div>
+
+
+                    <div class="profile">
+
+                        <div class="profile-avatar">
+                            S
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section class="page active-page" id="dashboard">
+
+
+                <!-- STATISTICS -->
+
+                <section class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <h2 id="courseCount">0</h2>
+
+                            <p>
+                                Total Courses
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            📝
+                        </div>
+
+                        <div>
+
+                            <h2 id="noteCount">0</h2>
+
+                            <p>
+                                Study Notes
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <h2 id="pdfCount">0</h2>
+
+                            <p>
+                                PDF Files
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                             🔗
+                        </div>
+
+                        <div>
+                            <h2 id="linkCount">0</h2>
+
+                            <p>
+                                Useful Links
+                            </p>
+
+                        </div>
+
+                    </div>
+
+  
+                    <div class="stat-card">
+
+                        <div class="stat-icon yellow">
+                            ⭐
+                        </div>
+
+                        <div>
+
+                            <h2 id="bookmarkCount">0</h2>
+
+                            <p>
+                                Bookmarks
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DASHBOARD GRID -->
+
+                <div class="dashboard-layout">
+
+
+                    <!-- LEFT AREA -->
+
+                    <div class="dashboard-left">
+
+
+                        <!-- COURSES -->
+
+                        <section class="dashboard-section">
+
+                            <div class="section-header">
+
+                                <div>
+
+                                    <h2>
+                                        My Courses
+                                    </h2>
+
+                                    <p>
+                                        Continue your learning journey.
+                                    </p>
+
+                                </div>
+
+
+                                <button
+                                    class="view-btn"
+                                    id="goCoursesBtn"
+                                >
+                                    View All →
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="course-preview-grid"
+                                id="dashboardCourses"
+                            >
+                            </div>
+
+                        </section>
+
+
+                        <!-- ACTIVITY -->
+
+                        <section class="dashboard-section">
+
+                            <div class="activity-card">
+
+                                <div class="section-header">
+
+                                    <div>
+
+                                        <h2>
+                                            Study Activity
+                                        </h2>
+
+                                        <p>
+                                            Your weekly learning progress
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="increase">
+
+                                        ↗ +12%
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="chart">
+
+                                    <div class="chart-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 45%;"
+                                        ></div>
+
+                                        <span>Mon</span>
+
+                                    </div>
+
+
+                                    <div class="chart-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 65%;"
+                                        ></div>
+
+                                        <span>Tue</span>
+
+                                    </div>
+
+
+                                    <div class="chart-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 40%;"
+                                        ></div>
+
+                                        <span>Wed</span>
+
+                                    </div>
+
+
+                                    <div class="chart-bar active-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 85%;"
+                                        ></div>
+
+                                        <span>Thu</span>
+
+                                    </div>
+
+
+                                    <div class="chart-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 60%;"
+                                        ></div>
+
+                                        <span>Fri</span>
+
+                                    </div>
+
+
+                                    <div class="chart-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 30%;"
+                                        ></div>
+
+                                        <span>Sat</span>
+
+                                    </div>
+
+
+                                    <div class="chart-bar">
+
+                                        <div
+                                            class="bar"
+                                            style="height: 55%;"
+                                        ></div>
+
+                                        <span>Sun</span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- RECENT MATERIALS -->
+
+                        <section class="dashboard-section">
+
+                            <div class="section-header">
+
+                                <div>
+
+                                    <h2>
+                                        Recently Added
+                                    </h2>
+
+                                    <p>
+                                        Your latest learning materials.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="recent-list"
+                                id="recentList"
+                            >
+                            </div>
+
+                        </section>
+
+
+                    </div>
+
+
+                    <!-- RIGHT AREA -->
+
+                    <div class="dashboard-right">
+
+
+                        <!-- PREMIUM CARD -->
+
+                        <div class="premium-card">
+
+                            <div>
+
+                                <span class="small-logo">
+                                    🎓 EduPlex
+                                </span>
+
+                                <h2>
+                                    Stay Consistent!
+                                </h2>
+
+                                <p>
+                                    Small progress every day leads to big achievements.
+                                </p>
+
+                                <button
+                                    class="lime-btn"
+                                    id="motivationBtn"
+                                >
+                                    Get Motivation
+                                </button>
+
+                            </div>
+
+
+                            <div class="premium-emoji">
+                                📚
+                            </div>
+
+                        </div>
+
+
+                        <!-- TODAY SCHEDULE -->
+
+                        <section class="schedule-card">
+
+                            <div class="section-header">
+
+                                <div>
+
+                                    <h2>
+                                        Today's Schedule
+                                    </h2>
+
+                                    <p>
+                                        Plan your study time.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="schedule-list">
+
+                                <div class="schedule-item">
+
+                                    <div class="schedule-icon purple">
+                                        💻
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            R Programming
+                                        </h4>
+
+                                        <p>
+                                            Practice Data Frames
+                                        </p>
+
+                                    </div>
+
+                                    <span>
+                                        10:00
+                                    </span>
+
+                                </div>
+
+
+                                <div class="schedule-item">
+
+                                    <div class="schedule-icon green">
+                                        🤖
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Deep Learning
+                                        </h4>
+
+                                        <p>
+                                            Neural Networks
+                                        </p>
+
+                                    </div>
+
+                                    <span>
+                                        2:00
+                                    </span>
+
+                                </div>
+
+
+                                <div class="schedule-item">
+
+                                    <div class="schedule-icon orange">
+                                        📖
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Revision
+                                        </h4>
+
+                                        <p>
+                                            Review Notes
+                                        </p>
+
+                                    </div>
+
+                                    <span>
+                                        7:00
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- QUICK ACTIONS -->
+
+                        <section class="quick-card">
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+
+                            <button id="quickAddNote">
+                                📝 Add Note
+                            </button>
+
+
+                            <button id="quickAddCourse">
+                                📚 Add Course
+                            </button>
+
+
+                            <button id="quickAddPdf">
+                                📄 Add PDF
+                            </button>
+
+
+                            <button id="quickAddLink">
+                                🔗 Add Link
+                            </button>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= COURSES PAGE ================= -->
+
+            <section class="page" id="courses">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            My Courses
+                        </h2>
+
+                        <p>
+                            Organize all your subjects in one place.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="lime-btn"
+                        id="addCourseBtn"
+                    >
+                        + Add Course
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="courses-grid"
+                    id="coursesGrid"
+                >
+                </div>
+
+            </section>
+
+
+            <!-- ================= NOTES PAGE ================= -->
+
+            <section class="page" id="notes">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            My Notes
+                        </h2>
+
+                        <p>
+                            Create and manage your study notes.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="lime-btn"
+                        id="addNoteBtn"
+                    >
+                        + Add Note
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="notes-grid"
+                    id="notesGrid"
+                >
+                </div>
+
+            </section>
+
+
+            <!-- ================= PDF PAGE ================= -->
+
+            <section class="page" id="pdfs">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            PDF Library
+                        </h2>
+
+                        <p>
+                            Manage your important study documents.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="lime-btn"
+                        id="addPdfBtn"
+                    >
+                        + Add PDF
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="pdf-grid"
+                    id="pdfGrid"
+                >
+                </div>
+
+            </section>
+
+            
+
+       <!-- ================= LINKS PAGE ================= -->
+
+        <section class="page" id="links">
+
+           <div class="page-heading">
+
+         <div>
+             <h2>Links</h2>
+
+            <p>
+                Connect, learn, and discover useful study resources.
+             </p>
+           </div>
+
+           <button
+              class="lime-btn"
+              id="addLinkBtn"
+        >
+                   + Add Link
+               </button>
+
+             </div>
+
+             <div
+                 class="link-grid"
+                 id="linkGrid"
+    >
+             </div>
+
+         </section>
+
+
+
+            <!-- ================= BOOKMARK PAGE ================= -->
+
+            <section class="page" id="bookmarks">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            Bookmarks
+                        </h2>
+
+                        <p>
+                            Your favorite and important notes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="notes-grid"
+                    id="bookmarkGrid"
+                >
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= COURSE MODAL ================= -->
+
+    <div class="modal" id="courseModal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                data-close="courseModal"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                Add New Course
+            </h2>
+
+
+            <form id="courseForm">
+
+                <label>
+                    Course Name
+                </label>
+
+                <input
+                    type="text"
+                    id="courseName"
+                    placeholder="Example: Deep Learning"
+                    required
+                >
+
+
+                <label>
+                    Course Icon
+                </label>
+
+                <input
+                    type="text"
+                    id="courseIcon"
+                    placeholder="Example: 🤖"
+                >
+
+
+                <label>
+                    Course Description
+                </label>
+
+                <textarea
+                    id="courseDescription"
+                    placeholder="Write a short description..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="lime-btn full-btn"
+                >
+                    Add Course
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= NOTE MODAL ================= -->
+
+    <div class="modal" id="noteModal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                data-close="noteModal"
+            >
+                ×
+            </button>
+
+
+            <h2 id="noteModalTitle">
+                Add New Note
+            </h2>
+
+
+            <form id="noteForm">
+
+                <input
+                    type="hidden"
+                    id="editNoteId"
+                >
+
+
+                <label>
+                    Note Title
+                </label>
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Example: Neural Networks"
+                    required
+                >
+
+
+                <label>
+                    Course
+                </label>
+
+                <select
+                    id="noteCourse"
+                    required
+                >
+                </select>
+
+
+                <label>
+                    Note Content
+                </label>
+
+                <textarea
+                    id="noteContent"
+                    placeholder="Write your notes here..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="lime-btn full-btn"
+                >
+                    Save Note
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PDF MODAL ================= -->
+
+    <div class="modal" id="pdfModal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                data-close="pdfModal"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                Add PDF
+            </h2>
+
+
+            <form id="pdfForm">
+
+                <label>
+                    PDF Title
+                </label>
+
+                <input
+                    type="text"
+                    id="pdfTitle"
+                    placeholder="Example: Unit 1 Notes"
+                    required
+                >
+
+
+                <label>
+                    Course
+                </label>
+
+                <select
+                    id="pdfCourse"
+                    required
+                >
+                </select>
+
+
+                <label>
+                    Select PDF File
+                </label>
+
+                <input
+                    type="file"
+                    id="pdfFile"
+                    accept=".pdf"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="lime-btn full-btn"
+                >
+                    Add PDF
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+   <!--===============LINK MODAL===============-->
+    
+<div class="modal" id="linkModal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Add Link</h2>
+            <button type="button" id="closeLinkModal">
+                ×
+            </button>
+        </div>
+
+        <form id="linkForm">
+
+            <label for="linkTitle">Link Title</label>
+            <input
+                type="text"
+                id="linkTitle"
+                placeholder="Example: Java Tutorials"
+                required
+            >
+
+            <label for="linkUrl">Website URL</label>
+            <input
+                type="url"
+                id="linkUrl"
+                placeholder="https://example.com"
+                required
+            >
+
+            <button type="submit" class="lime-btn">
+                Add Link
+            </button>
+
+        </form>
+    </div>
+</div>
+
+    <!-- TOAST MESSAGE -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduPlex | Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <div class="login-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="login-welcome">
+
+            <div class="brand">
+                <div class="brand-icon">🎓</div>
+                <h1>EduPlex</h1>
+            </div>
+
+            <div class="welcome-content">
+
+                <span class="welcome-tag">
+                    SMART LEARNING PLATFORM
+                </span>
+
+                <h2>
+                    Learn smarter.<br>
+                    Stay organized.<br>
+                    <span>Achieve more.</span>
+                </h2>
+
+                <p>
+                    Organize your courses, notes, bookmarks, useful links
+                    and study materials all in one place.
+                </p>
+
+                <!-- FEATURES -->
+
+                <div class="login-features">
+
+                    <div>
+                        <span>📚</span>
+                        <p>Organize Courses</p>
+                    </div>
+
+                    <div>
+                        <span>📝</span>
+                        <p>Manage Notes</p>
+                    </div>
+
+                    <div>
+                        <span>📄</span>
+                        <p>Store PDFs</p>
+                    </div>
+
+                    <div>
+                        <span>🔗</span>
+                        <p>Save Useful Links</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="welcome-decoration decoration-one"></div>
+            <div class="welcome-decoration decoration-two"></div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="login-form-section">
+
+            <div class="login-box">
+
+                <div class="mobile-logo">
+                    🎓 EduPlex
+                </div>
+
+                <h2>Welcome Back! sai👋</h2>
+
+                <p class="login-subtitle">
+                    Login to continue your learning journey.
+                </p>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="loginForm">
+
+                    <label>Email Address</label>
+
+                    <div class="input-group">
+
+                        <span>✉️</span>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-group password-group">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+
+                    <!-- LOGIN OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            Remember me
+
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        Login →
+                    </button>
+
+                </form>
+
+
+                <!-- DEMO ACCOUNT -->
+
+                <div class="demo-login">
+
+                    <p>
+                        Demo Account
+                    </p>
+
+                    <div>
+                        <strong>Email:</strong>
+                        student@eduplex.com
+                    </div>
+
+                    <div>
+                        <strong>Password:</strong>
+                        123456
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast"></div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
